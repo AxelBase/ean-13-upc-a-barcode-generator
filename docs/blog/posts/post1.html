@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>AxelBase – EAN-13 / UPC-A Barcode Generator</title>
+        <link rel="icon" href="../../AxelLab-Logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+		<link href="../../_app/immutable/assets/0.Bz8yDIo4.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/4.4CogBXHO.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CQ3zrRT0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BF2tJtno.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CgfLKKPV.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CjwqFSvp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Cn4KV7ju.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CbXssExd.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dl4I7eXy.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Cq7SUnok.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/vOLokhlZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/2c_uRwoF.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.CkBOqHeT.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Bkbc9oUP.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DFBKo_t_.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dcr_1iIt.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CgsMLYw8.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/4.I4-xG210.js"><!--12qhfyh--><meta name="description" content="Free, instant, standards-compliant EAN-13 and UPC-A barcode generator. No ads, no tracking, works offline."/><!----><!--1tq17n3--><meta name="description" content="A complete technical breakdown of EAN-13 and UPC-A barcodes: guard patterns, encoding tables, quiet zones, and why the check digit is calculated the way it is."/> <meta property="og:title" content="How EAN-13 and UPC-A Barcodes Actually Work"/> <meta property="og:description" content="Understand the inner workings of the world’s most common retail barcodes — from left/right guard patterns to L/G/R encoding sets."/> <meta property="og:url" content="../../blog/posts/post1"/> <meta property="og:type" content="article"/> <meta name="twitter:card" content="summary_large_image"/><!----><title>How EAN-13 and UPC-A Barcodes Actually Work • Blog</title>
+    </head>
+    <body data-bs-theme="light">
+        <!--[--><!--[--><!----><header class="custom-navbar"><div class="container d-flex justify-content-between align-items-center"><div class="d-flex align-items-center gap-3"><a href="../../" aria-label="Home" class="d-flex align-items-center text-decoration-none gap-2"><img src="../../AxelLab-Logo.ico" alt="Logo" class="navbar-brand-logo"/> <span class="navbar-brand-text">AxelBase</span></a> <div class="bmac-nav-item ms-3 d-none d-md-block position-relative"><button class="bmac-button d-flex align-items-center gap-2 svelte-12qhfyh" aria-label="Support options"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2,21V19H20V21H2M20,8V5H4V8H20M20,10H4V13C4,14.38 4.5,15.63 5.31,16.58L11.64,19H12.36L18.69,16.58C19.5,15.63 20,14.38 20,13V10M16,2H8V4H16V2Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <nav><ul class="d-flex align-items-center gap-2 m-0 p-0" style="list-style: none;"><li><a class="nav-link" href="../../">Home</a></li> <li><a class="nav-link" href="../../#about">About</a></li> <li><a class="nav-link" href="../../#how-to">How to use</a></li> <li><a class="nav-link" href="../../#faq">FAQ</a></li> <li><a class="nav-link" href="../../blog">Blog</a></li></ul></nav></div></header> <main class="container py-5"><!--[--><!----><div class="container fade-in post-layout svelte-1tq17n3"><div class="breadcrumbs svelte-1tq17n3"><a href="../../blog" class="svelte-1tq17n3">Blog</a> <span>/</span> <p>How EAN-13 and UPC-A Barcodes Work</p></div> <article class="prose svelte-1tq17n3"><h1 class="svelte-1tq17n3">How EAN-13 and UPC-A Barcodes Actually Work</h1> <p class="post-meta svelte-1tq17n3">Published: November 26, 2025</p> <p>At first glance, a barcode looks like random black and white stripes. In reality, EAN-13 and UPC-A are highly structured systems governed by strict international standards from GS1. Every line width, spacing, and digit has meaning.</p> <h2 class="svelte-1tq17n3">The Anatomy of an EAN-13 Barcode</h2> <p>An EAN-13 barcode consists of exactly <strong>95 modules</strong> (vertical columns). These are divided into:</p> <ul class="svelte-1tq17n3"><li class="svelte-1tq17n3"><strong>Left quiet zone</strong> — minimum 11 modules blank</li> <li class="svelte-1tq17n3"><strong>Start guard pattern</strong> — 101 (3 modules)</li> <li class="svelte-1tq17n3"><strong>6 left-hand digits</strong> — each 7 modules, using L, G, or R encoding depending on the first digit</li> <li class="svelte-1tq17n3"><strong>Center guard pattern</strong> — 01010 (5 modules)</li> <li class="svelte-1tq17n3"><strong>6 right-hand digits</strong> — always R-encoding</li> <li class="svelte-1tq17n3"><strong>End guard pattern</strong> — 101</li> <li class="svelte-1tq17n3"><strong>Right quiet zone</strong> — minimum 7 modules</li></ul> <h2 class="svelte-1tq17n3">Why There Are Three Encoding Sets (L, G, R)</h2> <p>The first digit (the “number system” or country prefix) determines how the left six digits are encoded:</p> <ul class="svelte-1tq17n3"><li class="svelte-1tq17n3"><strong>L-encoding</strong> — even parity (used when first digit is even)</li> <li class="svelte-1tq17n3"><strong>G-encoding</strong> — odd parity (mirrored L-pattern)</li> <li class="svelte-1tq17n3"><strong>R-encoding</strong> — always used on the right side</li></ul> <p>This clever system allows scanners to read the barcode in any direction — the center guard tells the scanner which half is which.</p> <h2 class="svelte-1tq17n3">UPC-A Is Just a Subset of EAN-13</h2> <p>A UPC-A barcode is technically an EAN-13 that starts with 0. The leading zero is implied and usually not printed in human-readable text (except in tools like this one that show the full 13-digit form for clarity). GS1 officially recommends migrating to EAN-13 globally.</p> <h2 class="svelte-1tq17n3">The Check Digit: More Than Just Error Detection</h2> <p>The 13th digit is calculated using the Modulo 10 algorithm with alternating weights of 1 and 3 from right to left. This catches 100% of single-digit errors and ~89% of transpositions — the most common scanning mistakes.</p> <h2 class="svelte-1tq17n3">FAQ</h2> <details class="svelte-1tq17n3"><summary class="svelte-1tq17n3">Can a scanner read a barcode upside down?</summary> <p class="svelte-1tq17n3">Yes! The symmetrical guard patterns and dual encoding sets allow omnidirectional scanning.</p></details> <details class="svelte-1tq17n3"><summary class="svelte-1tq17n3">Why do some barcodes have extra digits on the side?</summary> <p class="svelte-1tq17n3">Those are add-on barcodes (2 or 5 digits) used for magazines (issue number) or books (price). Not part of standard EAN-13/UPC-A.</p></details> <details class="svelte-1tq17n3"><summary class="svelte-1tq17n3">Is a barcode with wrong check digit still scannable?</summary> <p class="svelte-1tq17n3">Most modern scanners reject it immediately. Some older ones might beep but show garbage data.</p></details> <p class="italic-note svelte-1tq17n3">Understanding these rules is the foundation of generating reliable, scannable barcodes — exactly what this tool guarantees.</p></article></div><!----><!--]--></main> <footer class="custom-footer"><div class="container d-flex justify-content-between align-items-center"><span>© 2026 AxelBase — EAN-13/UPC-A Barcode Generator</span> <div><a href="../../privacy" class="footer-link">Privacy</a> <span class="text-white-50">|</span> <a href="../../terms" class="footer-link">Terms</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1081oih = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/ean-13-upc-a-barcode-generator"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CQ3zrRT0.js"),
+						import("../../_app/immutable/entry/app.CbXssExd.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

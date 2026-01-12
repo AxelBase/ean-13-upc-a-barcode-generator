@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>AxelBase – EAN-13 / UPC-A Barcode Generator</title>
+        <link rel="icon" href="../../AxelLab-Logo.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+		<link href="../../_app/immutable/assets/0.Bz8yDIo4.css" rel="stylesheet">
+		<link href="../../_app/immutable/assets/8.BhkTA9dV.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.CQ3zrRT0.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/BF2tJtno.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CgfLKKPV.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CjwqFSvp.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Cn4KV7ju.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.CbXssExd.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dl4I7eXy.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Cq7SUnok.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/vOLokhlZ.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/2c_uRwoF.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.CkBOqHeT.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Bkbc9oUP.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/DFBKo_t_.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Dcr_1iIt.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/CgsMLYw8.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/8.FG15ShAz.js"><!--12qhfyh--><meta name="description" content="Free, instant, standards-compliant EAN-13 and UPC-A barcode generator. No ads, no tracking, works offline."/><!----><!--1li990r--><meta name="description" content="Step-by-step math behind the EAN-13 and UPC-A check digit using the official GS1 Modulo 10 algorithm with weights 1 and 3."/> <meta property="og:title" content="How the Check Digit is Calculated (Step-by-Step)"/> <meta property="og:description" content="Never wonder again how the final digit is derived. Full worked example included."/> <meta property="og:url" content="../../blog/posts/post5"/> <meta property="og:type" content="article"/> <meta name="twitter:card" content="summary_large_image"/><!----><title>How the Check Digit is Calculated • Blog</title>
+    </head>
+    <body data-bs-theme="light">
+        <!--[--><!--[--><!----><header class="custom-navbar"><div class="container d-flex justify-content-between align-items-center"><div class="d-flex align-items-center gap-3"><a href="../../" aria-label="Home" class="d-flex align-items-center text-decoration-none gap-2"><img src="../../AxelLab-Logo.ico" alt="Logo" class="navbar-brand-logo"/> <span class="navbar-brand-text">AxelBase</span></a> <div class="bmac-nav-item ms-3 d-none d-md-block position-relative"><button class="bmac-button d-flex align-items-center gap-2 svelte-12qhfyh" aria-label="Support options"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2,21V19H20V21H2M20,8V5H4V8H20M20,10H4V13C4,14.38 4.5,15.63 5.31,16.58L11.64,19H12.36L18.69,16.58C19.5,15.63 20,14.38 20,13V10M16,2H8V4H16V2Z"></path></svg> <span>Buy me a coffee</span></button> <!--[!--><!--]--></div></div> <nav><ul class="d-flex align-items-center gap-2 m-0 p-0" style="list-style: none;"><li><a class="nav-link" href="../../">Home</a></li> <li><a class="nav-link" href="../../#about">About</a></li> <li><a class="nav-link" href="../../#how-to">How to use</a></li> <li><a class="nav-link" href="../../#faq">FAQ</a></li> <li><a class="nav-link" href="../../blog">Blog</a></li></ul></nav></div></header> <main class="container py-5"><!--[--><!----><div class="container fade-in post-layout svelte-1li990r"><div class="breadcrumbs svelte-1li990r"><a href="../../blog" class="svelte-1li990r">Blog</a> <span>/</span> <p>How the Check Digit is Calculated</p></div> <article class="prose svelte-1li990r"><h1 class="svelte-1li990r">How the Check Digit is Calculated (Step-by-Step)</h1> <p class="post-meta svelte-1li990r">Published: November 26, 2025</p> <p>The 13th digit isn’t random — it’s a mathematical safeguard that catches nearly all scanning errors. Here’s exactly how it’s calculated using the official GS1 method.</p> <h2 class="svelte-1li990r">The Algorithm (Modulo 10 with 3-1 Weighting)</h2> <p>Take any 12-digit base number: <code>401234567890</code></p> <ol><li>Start from the right (position 12)</li> <li>Multiply odd positions by 3, even positions by 1</li> <li>Sum all results</li> <li>Find the next multiple of 10</li> <li>Subtract → that’s your check digit</li></ol> <h2 class="svelte-1li990r">Worked Example</h2> <p>Number: <code>4 0 1 2 3 4 5 6 7 8 9 0</code><br/> Positions from right: 12 11 10 9 8 7 6 5 4 3 2 1</p> <ul class="svelte-1li990r"><li class="svelte-1li990r">0×3 + 9×1 + 8×3 + 7×1 + 6×3 + 5×1 + 4×3 + 3×1 + 2×3 + 1×1 + 0×3 + 4×1 = 123</li> <li class="svelte-1li990r">Next multiple of 10 = 130</li> <li class="svelte-1li990r">130 − 123 = <strong>7</strong></li></ul> <p>Final barcode: <code>4012345678907</code></p> <h2 class="svelte-1li990r">Why This Works So Well</h2> <p>The alternating 3× and 1× weights catch:</p> <ul class="svelte-1li990r"><li class="svelte-1li990r">100% of single-digit errors</li> <li class="svelte-1li990r">98% of adjacent transpositions (e.g., 123 → 132)</li> <li class="svelte-1li990r">Most twin errors (e.g., 11 → 22)</li></ul> <h2 class="svelte-1li990r">FAQ</h2> <details class="svelte-1li990r"><summary class="svelte-1li990r">Can two different numbers have the same check digit?</summary> <p class="svelte-1li990r">Yes — but never the same full 13 digits.</p></details> <details class="svelte-1li990r"><summary class="svelte-1li990r">What if the sum is already a multiple of 10?</summary> <p class="svelte-1li990r">Check digit = 0 (perfectly valid).</p></details> <p class="italic-note svelte-1li990r">This generator uses the exact GS1 algorithm — so every barcode it creates is 100% valid.</p></article></div><!----><!--]--></main> <footer class="custom-footer"><div class="container d-flex justify-content-between align-items-center"><span>© 2026 AxelBase — EAN-13/UPC-A Barcode Generator</span> <div><a href="../../privacy" class="footer-link">Privacy</a> <span class="text-white-50">|</span> <a href="../../terms" class="footer-link">Terms</a></div></div></footer><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1081oih = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						assets: "/ean-13-upc-a-barcode-generator"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.CQ3zrRT0.js"),
+						import("../../_app/immutable/entry/app.CbXssExd.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
